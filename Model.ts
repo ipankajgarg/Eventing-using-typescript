@@ -1,12 +1,12 @@
 import axios, { AxiosPromise } from "axios";
 import { Eventing } from "./Eventing";
+import { Sync } from "./Sync";
 
-const URL = "http://localhost:3000/blogs";
 //
 export class Model<T> {
   data: T[] = [];
 
-  constructor(public events: Eventing) {}
+  constructor(public events: Eventing, public sync: Sync<T>) {}
 
   on = this.events.on;
 
@@ -16,7 +16,7 @@ export class Model<T> {
   }
 
   fetch(): void {
-    axios.get(URL).then((data: { data: T[] }) => {
+    this.sync.fetch().then((data: { data: T[] }) => {
       this.setData(data.data);
     });
   }

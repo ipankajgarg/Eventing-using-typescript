@@ -1,6 +1,7 @@
 import { Blog } from "./Blog";
 import { Model } from "./Model";
 import { Eventing } from "./Eventing";
+import { Sync } from "./Sync";
 
 console.log("Hi there");
 //
@@ -9,7 +10,8 @@ interface BlogContent {
   desc: string;
 }
 
-var BlogPost = new Blog<BlogContent>(new Eventing());
+var BlogPost = new Blog<BlogContent>(new Eventing(), new Sync<BlogContent>());
+console.log(BlogPost);
 
 BlogPost.events.on("change", () => {
   const blogList = BlogPost.data;
