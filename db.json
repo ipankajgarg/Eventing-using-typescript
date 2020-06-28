@@ -1,0 +1,6 @@
+{
+  "blogs": [
+    { "id": 1, "desc": "Its a rainy day" },
+    { "id": 2, "desc": "Wet sand on the road" }
+  ]
+}
