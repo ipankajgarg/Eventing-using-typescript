@@ -1,6 +1,6 @@
 import { Blog } from "./Blog";
 import { Model } from "./Model";
-
+//
 interface BlogContent {
   id: number;
   desc: string;

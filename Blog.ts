@@ -1,5 +1,5 @@
 import { Model } from "./Model";
-
+//
 interface HasDesc {
   desc: string;
 }

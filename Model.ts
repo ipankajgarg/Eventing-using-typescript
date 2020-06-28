@@ -1,7 +1,7 @@
 import axios, { AxiosPromise } from "axios";
 
 const URL = "http://localhost:3000/blogs";
-
+//
 export class Model<T> {
   data: T[] = [];
 
